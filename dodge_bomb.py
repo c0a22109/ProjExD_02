@@ -133,7 +133,7 @@ def main():
                     kk_img = kk_img_up
                 elif movement[0] == 0 and movement[1] > 0:
                     kk_img = kk_img_down
-                if movement[0] > 0:
+                elif movement[0] > 0:
                     kk_img = kk_img_left
                 elif movement[0] < 0:
                     kk_img = kk_img_right
