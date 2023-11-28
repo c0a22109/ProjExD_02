@@ -13,11 +13,11 @@ def main():
     kk_img = pg.image.load("ex02/fig/3.png")
     kk_img = pg.transform.rotozoom(kk_img, 0, 2.0)
     bb_img = pg.Surface((20, 20)) #練習１：透明のSurfaceを作る
-    pg.draw.circle(bb_img, (255, 0, 0), (10, 10), 7) #練習１：赤い半径10の円を作る
+    pg.draw.circle(bb_img, (255, 0, 0), (10, 10), 10) #練習１：赤い半径10の円を作る
     bb_rct = bb_img.get_rect()
     bb_rct.centerx = random.randint(0, WIDTH)
     bb_rct.centery = random.randint(0, HEIGHT)    
-    bb_img.set_colorkey((0, 0, 0))
+    bb_img.set_colorkey((0, 0, 0)) #練習１：黒い部分を透明にする
     clock = pg.time.Clock()
     tmr = 0
     while True:
