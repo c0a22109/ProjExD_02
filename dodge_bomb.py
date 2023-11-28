@@ -115,6 +115,12 @@ def main():
         
         # こうかとんと爆弾が衝突したらreturn
         if kk_rect.colliderect(bb_rct):
+            kk_img_collision = pg.image.load("ex02/fig/8.png")
+            kk_img_collision = pg.transform.rotozoom(kk_img_collision, 0, 3.0)
+            screen.blit(bg_img, [0, 0])
+            screen.blit(kk_img_collision, kk_rect.topleft)
+            pg.display.update()
+            pg.time.wait(1000)
             return
         
         # 飛ぶ方向に応じてこうかとんを切り替える
@@ -141,6 +147,7 @@ def main():
         screen.blit(bg_img, [0, 0])
         screen.blit(kk_img, kk_rect.topleft)
         screen.blit(bb_img, bb_rct.topleft)
+
 
         pg.display.update()
         tmr += 1
