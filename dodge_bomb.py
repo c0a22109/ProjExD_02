@@ -119,6 +119,9 @@ def main():
             kk_img_collision = pg.transform.rotozoom(kk_img_collision, 0, 3.0)
             screen.blit(bg_img, [0, 0])
             screen.blit(kk_img_collision, kk_rect.topleft)
+            time = tmr // 50  # 1フレームが1/50秒
+            text = font.render(f"Time: {time} seconds", True, (0, 0, 0))
+            screen.blit(text, (700, 100))
             pg.display.update()
             pg.time.wait(1000)
             return
@@ -148,6 +151,10 @@ def main():
         screen.blit(kk_img, kk_rect.topleft)
         screen.blit(bb_img, bb_rct.topleft)
 
+        # タイマー
+        time = tmr // 50  # 1フレームが1/50秒
+        text = font.render(f"Time: {time} seconds", True, (0, 0, 255))
+        screen.blit(text, (10, 10))
 
         pg.display.update()
         tmr += 1
