@@ -48,6 +48,10 @@ def main():
             if event.type == pg.QUIT: 
                 return
 
+        if kk_rct.colliderect(bb_rct):
+            print("Game Over")
+            return
+        
         key_lst = pg.key.get_pressed()
 
         sum_mv = [0, 0]
